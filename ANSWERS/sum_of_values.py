@@ -10,3 +10,6 @@ print("{:.2f}".format(sum))
 # or, for the truly functional experience:
 
 print(reduce(operator.add, map(float, open('../DATA/float_values.txt'))))
+
+with open('../DATA/float_values.txt') as fv_in:
+    total = sum(map(float(fv_in)))

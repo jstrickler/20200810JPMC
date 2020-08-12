@@ -28,6 +28,21 @@ def spam():
 def ham():
     return 8
 
+# ham = multiply(10)(ham)
+
 a = spam()
 b = ham()
 print(a, b)
+
+
+# @foo
+# def bar():
+#    pass
+# SAME AS
+# bar = foo(bar)
+
+# @spam(a, b, c)
+# def ham():
+#    pass
+# SAME AS
+# ham = spam(a, b, c)(ham)

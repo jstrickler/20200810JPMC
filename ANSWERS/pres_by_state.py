@@ -1,15 +1,17 @@
 #!/usr/bin/python
+from operator import itemgetter
+from functools import partial
+from itertools import groupby
+
+def key_func(state):
+    return state[-1]
 
 with open("../DATA/presidents.txt") as pres_in:
-    count_of = {}
+    states = map(lambda line: line.split(':')[6], pres_in)
+    sorted_states = sorted(states, key=key_func)
+    groups = groupby(sorted_states, key=key_func)
+    # {group1: [item1, item2, item3], group2: [item1, item2, ...], ...}
+    for state, state_list in groups:
+        print(state, len(list(state_list)))
 
-    for rec in pres_in:
-        flds = rec.split(":")
-        state = flds[6]
-        if state in count_of:
-            count_of[state] += 1
-        else:
-            count_of[state] = 1
 
-for state, count in sorted(count_of.items()):
-    print("%-16s %2d" % (state, count))
