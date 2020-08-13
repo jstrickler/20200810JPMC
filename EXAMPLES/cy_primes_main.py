@@ -2,13 +2,13 @@
 import time
 import py_primes
 import numba_primes
-import pyximport
-pyximport.install() # <1>
-import cy_primes # <2>
+# import /pyximport
+# pyximport.install(language_level=3) # <1>
+# import cy_primes # <2>
 
-NUM_PRIMES = 50000 # <3>
+NUM_PRIMES = 10000 # <3>
 
-for mod in numba_primes, cy_primes, py_primes: # <4>
+for mod in numba_primes,  py_primes: # <4>
 
     timestamp = time.time() # <5>
 

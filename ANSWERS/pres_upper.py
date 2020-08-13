@@ -12,3 +12,6 @@ last_names_upper = [ln.upper() for ln in last_names]
 
 for last_name in last_names_upper:
     print(last_name)
+
+upper_names = [line.split(':')[1].upper() for line in open('../DATA/presidents.txt')]
+print(upper_names)

@@ -1,6 +1,4 @@
 #!/usr/bin/python
-from operator import itemgetter
-from functools import partial
 from itertools import groupby
 
 def key_func(state):

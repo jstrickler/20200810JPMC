@@ -11,7 +11,7 @@ from pyparsing import *
     value ::= chars+
 '''
 
-value = Word(' \t' + printables, excludeChars='=')('value')  # <1>
+value = Word(' \t' + printables, excludeChars='=')('value')  # <1>  # callable class
 key = Word(alphanums)('key')  # <2>
 key_value_pair = Group(key + Suppress('=') + value)  # <3>
 section_data = Group(OneOrMore(key_value_pair))('keylist')  # <4>
